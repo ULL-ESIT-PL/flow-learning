@@ -24,7 +24,7 @@ The Flow type checker developed by Facebook (now Meta) is still an active projec
 
 As of my last update in May 2024, the Flow type checker developed by Facebook (now Meta) is still an active project. However, its popularity and community activity have declined in comparison to TypeScript. Flow is still maintained and used internally by Meta for some of its projects, but the broader JavaScript/TypeScript community has largely gravitated towards TypeScript due to its comprehensive feature set, community support, and integration with the broader JavaScript ecosystem.
 
-### Flow repo and Documentation
+## Flow repo and Documentation
 
 1. **Official GitHub Repository**: Check the [Flow GitHub repository](https://github.com/facebook/flow) for the latest commits, releases, and issues. This will give you a clear picture of its current activity and support.
 2. **Flow Documentation**: The [official Flow documentation](https://flow.org/) is another resource to see the latest updates and guides.
