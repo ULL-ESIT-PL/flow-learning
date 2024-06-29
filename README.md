@@ -3,7 +3,9 @@
 * ["Flow - Am I Your Type?"](https://www.youtube.com/watch?v=Eti6_bSRgHU&t=304s)  by Mark Volkmann. Sept. 2017.
 * [flow-typed](https://flow-typed.github.io/flow-typed/#/?id=flow-typed)
 
-Flow is an open source tool from Facebook that is "a static type checker, designed to find type errors in JavaScript programs". It supports adding types gradually to variables, parameters, return values, object properties, and array elements. Flow even catches some errors without adding types by using type inference and flow analysis.
+Flow is an open source tool written in OCaml from Facebook that is "a static type checker, designed to find type errors in JavaScript programs". Its parser is available as a compiled-to-JavaScript module published to [npm, named flow-parser](https://www.npmjs.com/package/flow-parser). JavaScript packages which make use of parsing Flow-typed JavaScript can use this to generate Flow's syntax tree with annotated types attached.
+
+Flow supports adding types gradually to variables, parameters, return values, object properties, and array elements. Flow even catches some errors without adding types by using type inference and flow analysis.
 
 Flow supports many types including primitives, functions (with specified signatures), arrays, objects, built-in classes, custom classes, and generic (parameterized) classes.
 
