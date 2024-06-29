@@ -7,7 +7,8 @@
     "flow": "flow",
     "build": "babel src/ -d lib/",
     "rt": "flow-remove-types src/ -d lib/",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "save": "git add . && git commit -m 'learning flow' && git push"
   },
   "keywords": [],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
