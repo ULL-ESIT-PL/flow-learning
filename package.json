@@ -1,12 +1,12 @@
 {
   "name": "flow-learning",
   "version": "1.0.0",
-  "description": "",
-  "main": "square.js",
+  "description": "Learning flow",
+  "main": "lib/square.js",
   "scripts": {
     "flow": "flow",
-    "build": "babel src/ -d lib/",
-    "rt": "flow-remove-types src/ -d lib/",
+    "build": "babel flowsrc/ -d lib/",
+    "rt": "flow-remove-types flowsrc/ -d lib/",
     "prepublishOnly": "npm run build",
     "save": "git add . && git commit -m 'learning flow' && git push"
   },
@@ -18,7 +18,7 @@
     "@babel/core": "^7.24.7",
     "@babel/preset-flow": "^7.24.7",
     "babel-plugin-syntax-hermes-parser": "^0.22.0",
-    "flow-bin": "^0.238.3",
-    "flow-remove-types": "^2.238.3"
+    "flow-bin": "^0.257.1",
+    "flow-remove-types": "^2.257.1"
   }
 }

@@ -32,3 +32,78 @@ As of my last update in May 2024, the Flow type checker developed by Facebook (n
 2. **Flow Documentation**: The [official Flow documentation](https://flow.org/) is another resource to see the latest updates and guides.
 
 
+## flow-remove-types
+
+
+To strip Flow types from a JavaScript file and get the pure JavaScript version, you can use the 'flow-remove-types' package. 
+Here is the help:
+
+```
+➜  flow-learning git:(main) ✗ npx flow-remove-types --help        
+Usage: flow-remove-types [options] [sources] 
+
+Options:
+  -h, --help        Show this message
+  -v, --version     Prints the current version of flow-remove-types
+  -i, --ignore      Paths to ignore, Regular Expression
+  -x, --extensions  File extensions to transform
+  -o, --out-file    The file path to write transformed file to
+  -d, --out-dir     The directory path to write transformed files within
+  -a, --all         Transform all files, not just those with a @flow comment
+  -p, --pretty      Remove flow types without replacing with spaces, 
+                    producing prettier output but may require using source maps
+      --ignore-uninitialized-fields
+                    Removes uninitialized class fields (`foo;`, `foo: string;`)
+                    completely rather than only removing the type. THIS IS NOT
+                    SPEC COMPLIANT! Instead, use `declare foo: string;` for
+                    type-only fields.
+  -m, --sourcemaps  Also output source map files. Optionally pass "inline"
+  -q, --quiet       Does not produce any output concerning successful progress.
+
+Examples:
+
+Transform one file:
+  flow-remove-types --out-file output.js input.js
+
+Transform many files:
+  flow-remove-types --out-dir out/ input1.js input2.js
+
+Transform files in directory:
+  flow-remove-types --out-dir out/ indir/
+
+Transform files with source maps:
+  flow-remove-types --out-dir out/ indir/ --sourcemaps
+
+Transform files with inline source maps:
+  flow-remove-types --out-dir out/ indir/ --sourcemaps inline
+
+Transform stdin:
+  cat input.js | flow-remove-types > output.js
+```
+> [!NOTE]
+> The input code has to have the `@flow` comment to be processed by `flow-remove-types`.
+
+## Removing Flow Types from JavaScript Code
+
+Here's a simple Node.js script that demonstrates how to do this:
+
+`file="strip-flow-types.mjs`
+```javascript
+import flowRemoveTypes from 'flow-remove-types';
+import { readFileSync } from 'fs';
+
+try {
+  const fileContent = readFileSync('example-flow.js', 'utf8');
+  const strippedFileContent = flowRemoveTypes(fileContent);
+  console.log("\nStripped content from file:");
+  console.log(strippedFileContent.toString());
+} catch (error) {
+  console.log("Error reading file:", error.message);
+}
+```
+
+This script does the following:
+
+1. We import the `flow-remove-types` package and the `readFileSync` function from the `fs` module.
+2. As an example of how to strip types from a file, we attempt to read a file named 'example-flow.js', 
+3. strip its types, and print the result. 
